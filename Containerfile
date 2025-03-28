@@ -1,11 +1,9 @@
-FROM ucsb/jupyter-base:latest
+FROM ucsb/scicpy-base:latest
 
 MAINTAINER LSIT Systems <lsitops@lsit.ucsb.edu>
 
 USER root
 
-#RUN mamba install -y astropy <libraries>
-
-#RUN pip install <libraries>
+RUN conda install -y nltk gensim
 
 USER $NB_USER
