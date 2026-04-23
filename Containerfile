@@ -4,8 +4,11 @@ MAINTAINER LSIT Systems <lsitops@lsit.ucsb.edu>
 
 USER root
 
-RUN apt-get update && apt-get install -y \
-    texlive-full \
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    texlive-xetex \
+    texlive-latex-extra \
+    texlive-fonts-recommended \
+    texlive-plain-generic \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
